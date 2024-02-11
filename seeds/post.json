@@ -1,0 +1,22 @@
+[
+    {
+      "blogTitle": "techBlog",
+      "blogContent": "We will be dsicussing Web development",
+      "user_id": 1
+    },
+    {
+      "blogTitle": "Web Development Tips for Beginners",
+      "blogContent": "Starting your journey in web development? Here are some useful tips...",
+      "user_id": 2
+    },
+    {
+      "blogTitle": "The Impact of Climate Change on Biodiversity",
+      "blogContent": "Climate change is posing a serious threat to biodiversity worldwide...",
+      "user_id": 3
+    },
+    {
+      "blogTitle": "Healthy Habits for a Productive Workday",
+      "blogContent": "Maintaining good habits can significantly improve your productivity at work...",
+      "user_id": 3
+    }
+  ]
