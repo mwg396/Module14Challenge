@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
 
-    const blogPostData = await Blogpost.findAll({
+    const blogpostData = await Blogpost.findAll({
       include: [
         {
           model: User,
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
+    const blogPosts = blogpostData.map((project) => project.get({ plain: true }));
 
    
     res.render('homepage', { 
@@ -21,13 +21,14 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
 
-router.get('/blogPost/:id', async (req, res) => {
+router.get('/project/:id', async (req, res) => {
   try {
-    const blogPostData = await Blogpost.findByPk(req.params.id, {
+    const projectData = await Blogpost.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -36,10 +37,10 @@ router.get('/blogPost/:id', async (req, res) => {
       ],
     });
 
-    const blogPost = blogPostData.get({ plain: true });
+    const project = projectData.get({ plain: true });
 
-    res.render('blogPost', {
-      ...blogPost,
+    res.render('project', {
+      ...project,
       logged_in: req.session.logged_in
     });
   } catch (err) {
