@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Blogpost extends Model {}
-
+//depolying
 Blogpost.init(
   {
     id: {
